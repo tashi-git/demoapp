@@ -5,7 +5,7 @@
 apiVersion: v1              # API version for Namespace resources
 kind: Namespace            # Resource type - logical cluster partition
 metadata:                  # Namespace information
-  name: 02220173    # 📝 Replace STUDENT_NUMBER (e.g., 0215539)
+  name: ns-02220173    # 📝 Replace STUDENT_NUMBER (e.g., 0215539)
   labels:                  # Labels for organization and management
     purpose: workshop      # This namespace is for workshop activities
     student: "02220173"  # 📝 Replace with your student number
