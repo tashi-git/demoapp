@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1  # API version for Ingress resources
+kind: Ingress                     # Resource type - HTTP routing rules
+metadata:                         # Ingress information
+  name: taskmanager-ingress
+  namespace: 02220173    # 📝 Replace 0215539 with your number
+  labels:
+    app: taskmanager
+    student: "02220173"  # 📝 Replace with your student number
+spec:                             # Ingress specification
+  ingressClassName: nginx         # Use the nginx ingress controller
+  rules:                          # Routing rules
+  - host: 02220173.cstapp.site  # 📝 Replace 0215539 (e.g., taskmanager-0215539.local)
+    http:                         # HTTP routing rules
+      paths:                      # URL path routing
+      - path: /                   # Root path and all subpaths
+        pathType: Prefix          # Path matching type (Prefix, Exact, or ImplementationSpecific)
+        backend:                  # Where to send matching requests
+          service:                # Target service
+            name: taskmanager-service  # Service name (must be in same namespace)
+            port:                 # Service port
+              number: 80          # Port number on the service
